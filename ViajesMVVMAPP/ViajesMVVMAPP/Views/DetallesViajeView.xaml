@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ViajesMVVMAPP.Views.DetallesViajeView"
+             Title="Detalles del destino">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="1,0">
+            <GradientStop Color="DodgerBlue" Offset="0.5"></GradientStop>
+            <GradientStop Color="White" Offset="1"></GradientStop>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="Body"></Setter>
+        </Style>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Margin="10,0">
+
+            <Frame Margin ="10" WidthRequest="300" HeightRequest="250" BackgroundColor="DodgerBlue" Padding="1" CornerRadius="7">
+                <Image Aspect="AspectFill" Source="{Binding ImagenLugar}"></Image>
+            </Frame>
+            <Frame CornerRadius="10">
+                <StackLayout>
+                    <FlexLayout>
+                        <Label Margin="10,0,10,0" Text="{Binding NombreLugar}"></Label>
+                        <Label Text="{Binding Ciudad }"></Label>
+                    </FlexLayout>
+                    <Frame Margin="0,15,0,15" BorderColor="DodgerBlue">
+                        <FlexLayout>
+                            <Label Margin="10,0,10,0" Text="Presupuesto estimado:"></Label>
+                            <Label TextColor="Green" Text="$"></Label>
+                            <Label TextColor="Green" Text="{Binding PresupuestoRequerido }"></Label>
+                        </FlexLayout>
+                    </Frame>
+                    <Label Margin="0,10" Text="{Binding Pais}" HorizontalTextAlignment="End"></Label>
+                    <Label Text="Descripción:"></Label>
+                    <Label Text="{Binding Descripcion}"></Label>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:ViajesMVVM.ViewModels" x:DataType="viewmodels:DestinosViewModel"
+             x:Class="ViajesMVVMAPP.Views.AgregarDestinoView"
+             Title="Agregue un destino"
+             >
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="1,0">
+            <GradientStop Color="DodgerBlue" Offset="0.5"></GradientStop>
+            <GradientStop Color="White" Offset="1"></GradientStop>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Command="{Binding AgregarCommand}" IconImageSource="comprobar.png"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Margin="0,10">
+
+            <StackLayout.Resources>
+                <Style TargetType="Frame">
+                    <Setter Property="Margin" Value="10,5"></Setter>
+                    <Setter Property="CornerRadius" Value="25"></Setter>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="TextColor" Value="black"></Setter>
+                </Style>
+                <Style TargetType="Entry">
+                    <Setter Property="TextColor" Value="Black"></Setter>
+                </Style>
+            </StackLayout.Resources>
+            <Label Text="{Binding Error}" TextColor="Gold" FontAttributes="Bold" TextDecorations="Underline" FontSize="Default" HorizontalTextAlignment="Center"></Label>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue el nombre del destino:"  ></Label>
+                    <Entry Text="{Binding DestinoViaje.NombreLugar}" ></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue el país del destino:"></Label>
+                    <Entry Text="{Binding DestinoViaje.Pais}"></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue la ciudad del destino:"></Label>
+                    <Entry Text="{Binding DestinoViaje.Ciudad}"></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue una descripción corta del destino:"></Label>
+                    <Editor Text="{Binding DestinoViaje.Descripcion}" TextColor="Black"></Editor>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue un presupuesto recomendado:"></Label>
+                    <Entry Keyboard="Numeric" Text="{Binding DestinoViaje.PresupuestoRequerido}"></Entry>
+                </StackLayout>
+            </Frame>
+            <Frame>
+                <StackLayout>
+                    <Label Text="Agregue una imágen de referencia del destino:"></Label>
+                    <Entry Text="{Binding DestinoViaje.ImagenLugar}"></Entry>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
